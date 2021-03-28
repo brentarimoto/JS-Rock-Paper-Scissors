@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='css/starter.css'>
+</head>
+
+<body>
+    <div class='header'>
+        <div class='header__logo'>
+            <img class='header__logo-icon' src='image/RPS-icon.png'>
+        </div>
+
+        <div class='header__sitename'>Rock,Paper,Scissors</div>
+
+        <div class='header__settings'>
+            <img class='header__settings-icon' src='image/setting-wheel.png'>
+        </div>
+    </div>
+
+    <div class='buttons'>
+        <button id='buttons__play'>Play</button>
+    </div>
+
+    <div class='main'>
+        <div class='account'>
+
+            <div class='account__section account__image'>
+                <img id='account__icon' src="image/account-icon.jpg" alt="Avatar">
+            </div>
+
+            <div class="account__section account__user">
+                <div class='account__userdiv'>User: </div>
+                <div class="account__username"></div>
+            </div>
+
+            <div class="account__section account__friends">
+                <div class='account__friendsdiv'>Friends:</div>
+                <div class="account__friendcount">0</div>
+            </div>
+
+        </div>
+
+        <div class='info'>
+            <ul class='info__stats'>
+                <li id='wins'>Wins: </li>
+                <li id='losses'>Losses: </li>
+                <li id='ties'>Ties: </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+<script type="module" src="scripts/starter.js"></script>
+
+</html>

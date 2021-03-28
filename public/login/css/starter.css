@@ -1,0 +1,159 @@
+*{
+    /* margin: 0%; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: lightblue;
+}
+
+/********************HEADER SECTION*********************/
+
+.header{
+    box-shadow: 2px 2px 5px black;
+    background-color: gray;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    grid-template-areas:
+        "logo site settings"
+}
+
+.header__logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.header__logo-icon{
+    max-height: 45px;
+    max-width: 100%
+}
+
+.header__sitename{
+    font-size: 45px;
+    font-family: cursive;
+    grid-area: site;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__settings{
+    grid-area: settings;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.header__settings-icon{
+    max-width: 40px;
+    max-height: 40px;
+    display: block;
+}
+
+
+/********************BUTTON SECTION*********************/
+
+.buttons{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin: 10px;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 5px black;
+    height: 50px;
+    font-size: 40px;
+    padding: 0px 20px;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: #darkgrey
+}
+
+button:active{
+    box-shadow: .5px .5px 5px black;
+    transform: translateY(4px);
+    transform: translateX(4px);
+}
+
+button:focus {
+    outline: none;
+}
+
+/********************MAIN SECTION*********************/
+
+.main{
+    display: grid;
+    grid-template-columns: 100px 2fr 3fr 100px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    ". account info .";
+}
+
+/**** ACCOUNT(LEFT SECTION) ****/
+.account{
+    grid-area: account;
+    margin: 0px 20px;
+    border: 3px solid grey;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 200px 25px 25px 1fr;
+    grid-template-areas:
+    "accounticon"
+}
+
+.account__image{
+    grid-area: accounticon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account__icon{
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+/**** LOGIN(RIGHT SECTION) ****/
+
+.create-or-login{
+    grid-area: info;
+    margin: 0px 20px;
+    border: 3px solid grey;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.create,
+.login{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 75%;
+    height: 25px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/************HIDDEN****************/
+.buttons__button--hidden,
+.create--hidden,
+.login--hidden{
+    display: none;
+}
