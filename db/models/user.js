@@ -1,31 +1,41 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+  const User = sequelize.define('User', {
+    username: {
+      allowNull: false,
+      type: DataTypes.STRING(50),
+      unique: true,
+    },
+    password: {
+      allowNull: false,
+      type: Sequelize.STRING.BINARY,
+    },
+    email: {
+      allowNull: false,
+      type: Sequelize.STRING(50),
+      unique: true,
+      isEmail: true
+    },
+    wins: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    ties: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    losses: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+  }, {});
+  User.associate = function(models) {
+    User.belongsToMany(models.User, {through: 'Friend', foreignKey: 'currUserId', otherKey: 'friendId'})
+    User.belongsToMany(models.User, {through: 'Friend', foreignKey: 'friendId', otherKey: 'currUserId'})
+    User.hasMany(models.Move, {foreignKey: 'userId'})
   };
-  User.init({
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
-    email: DataTypes.STRING,
-    friendCount: DataTypes.INTEGER,
-    wins: DataTypes.INTEGER,
-    lies: DataTypes.INTEGER,
-    losses: DataTypes.INTEGER,
-    wlRatio: DataTypes.DECIMAL,
-    rankId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
   return User;
 };

@@ -10,40 +10,33 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(50),
+        unique: true,
       },
       password: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING.BINARY
       },
       email: {
         allowNull: false,
-        type: Sequelize.STRING(50)
-      },
-      friendCount: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING(50),
+        unique: true,
+        isEmail: true
       },
       wins: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         defaultValue: 0,
       },
       ties: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         defaultValue: 0,
       },
       losses: {
-        type: Sequelize.INTEGER,
-        defaultValue: 0,
-      },
-      wlRatio: {
-        type: Sequelize.DECIMAL(3,3),
-        defaultValue: 0,
-      },
-      rankId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: {model: 'Ranks'},
+        defaultValue: 0,
       },
       createdAt: {
         allowNull: false,
