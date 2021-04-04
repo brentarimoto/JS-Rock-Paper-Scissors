@@ -1,7 +1,7 @@
 /********** REQUIRES *************/
 const express = require('express')
 const morgan = require('morgan')
-const routes = require('./routes.js')
+const routes = require('./routes/users.js')
 const path = require('path')
 
 /********** APP SETUP *************/

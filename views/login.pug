@@ -2,8 +2,17 @@ extends layout.pug
 block content
     div(class="header")
         div(class="header__logo")
-            img(class="header__logo-icon" src="./image/setting-wheel.png")
-        div(class="header__sitename") Rock,Paper,Scissors
+            img(class="header__logo-icon" src="./image/RPS-icon.png")
+            p(class="header__sitename") Rock,Paper,Scissors
+        div(class="asdf")
+        form(class="header__login")
+            div(class='header__login-div')
+                input(class='header__login-user-or-email' placeholder='Username/Email')
+            div(class='header__login-div')
+                input(class='header__login-password' placeholder='Password')
         div(class="header__settings")
             img(class="header__settings-icon" src="./image/setting-wheel.png")
-    div(class="main")
+    div(class="login")
+        button(id='buttons__create' class='buttons__button buttons__button--hidden') Create
+        button(id='buttons__login' class='buttons__button buttons__button--hidden') Create
+

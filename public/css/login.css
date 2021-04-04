@@ -7,17 +7,17 @@ body{
     background-color: lightblue;
 }
 
-/********************HEADER SECTION*********************/
+/******************** HEADER SECTION *********************/
 
 .header{
     box-shadow: 2px 2px 5px black;
     background-color: gray;
     color: white;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 3fr 1fr;
     grid-template-rows: 50px;
     grid-template-areas:
-        "logo site settings"
+        "logo login settings"
 }
 
 .header__logo{
@@ -33,12 +33,21 @@ body{
 }
 
 .header__sitename{
-    font-size: 45px;
+    font-size: 20px;
     font-family: cursive;
-    grid-area: site;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
+}
+
+.header__login{
+    grid-area: login;
+}
+
+.header__login-user-or-email,
+.header__login-password{
+    display: inline;
 }
 
 .header__settings{
@@ -56,7 +65,7 @@ body{
 }
 
 
-/********************BUTTON SECTION*********************/
+/******************** BUTTON SECTION *********************/
 
 .buttons{
     height: 75px;
@@ -90,7 +99,7 @@ button:focus {
     outline: none;
 }
 
-/********************MAIN SECTION*********************/
+/******************** MAIN SECTION *********************/
 
 .main{
     display: grid;

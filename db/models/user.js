@@ -8,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     password: {
       allowNull: false,
-      type: Sequelize.STRING.BINARY,
+      type: DataTypes.STRING.BINARY,
     },
     email: {
       allowNull: false,
-      type: Sequelize.STRING(50),
+      type: DataTypes.STRING(50),
       unique: true,
       isEmail: true
     },
@@ -33,8 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   User.associate = function(models) {
-    User.belongsToMany(models.User, {through: 'Friend', foreignKey: 'currUserId', otherKey: 'friendId'})
-    User.belongsToMany(models.User, {through: 'Friend', foreignKey: 'friendId', otherKey: 'currUserId'})
+    User.belongsToMany(User, {as: 'friends', through: 'Friend'})
     User.hasMany(models.Move, {foreignKey: 'userId'})
   };
   return User;

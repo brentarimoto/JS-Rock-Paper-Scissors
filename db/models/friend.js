@@ -3,11 +3,11 @@ module.exports = (sequelize, DataTypes) => {
   const Friend = sequelize.define('Friend', {
     currUserId: {
       allowNull: false,
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
     },
     friendId: {
       allowNull: false,
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
     },
   }, {});
   Friend.associate = function(models) {
